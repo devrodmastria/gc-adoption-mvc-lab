@@ -1,0 +1,36 @@
+﻿
+<h4>Thanks for letting us re-home your pet!</h4>
+<p>Enter details below to add your little-one to our adoption list</p>
+<form asp-method="post" asp-action="addpet" asp-controller="Home">
+    
+    <label for="N">Pet name: </label>
+    <input type="text" name="Name" id="N" />
+    <br />
+
+    <label for="Desc">Description: </label>
+    <input type="text" name="Description" id="Desc" />
+    <br />
+
+    <label for="Breed">Breed: </label>
+    <input type="text" name="Breed" id="Breed" />
+    <br />
+
+    <label for="Ty">Type: </label>
+    <select name="Type" id="Ty">
+        <option value="Choose">Choose</option>
+        <option value="Rabbit">Rabbit</option>
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+        <option value="Other">Other</option>
+    </select>
+    <br />
+
+    <label for="A">Age: </label>
+    <input type="text" name="Age" id="A" />
+    <br/>
+    <label for="I">Link to picture (optional): </label>
+    <input type="text" name="Img" id="I" />
+    <br />
+    <br />
+    <input type="submit" />
+</form>

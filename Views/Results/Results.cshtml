@@ -1,0 +1,49 @@
+﻿@model List<Animal>
+
+@{
+    ViewData["Title"] = "Adoption Center";
+    string petType = Model[0].Type + "s";
+}
+<div>
+    <p>Showing results for: @{if(!petType.Contains("Choose"))@petType}</p>
+
+    <hr style="border-top: 5px solid;color:pink;">
+    @{
+        if (Model[0].Age == -1)
+        {
+            <h5>All animals have been adopted! Please check tomorrow or
+                <span style="color:lightblue">
+                <a asp-controller="Home" asp-action="Index">try a different category.</a>
+                </span>
+            </h5>
+        }
+        else
+        {
+            foreach(Animal a in Model)
+            {
+
+                if(@a.Img == null)
+                {
+
+                    <p style="border: 5px solid;color:cornflowerblue;width:min-content">NO IMAGE AVAILABLE</p>
+                }
+                else
+                {
+                    <img src="@a.Img" style="border: 5px solid;color:cornflowerblue;width:200px" />
+                }
+                <br />
+                <p><b>Name:</b> @a.Name</p>
+                <p><b>Breed:</b> @a.Breed</p>
+                <p><b>Age:</b> @a.Age</p>
+                <p><b>Details:</b> @a.Description</p>
+
+                <p style="text-align:center">
+                    <a asp-controller="Home" asp-action="ReturnHome" asp-route-animax="@a.Id"><b><u>Adopt @a.Name</u></b></a>
+                </p>
+                <hr style="border-top: 5px solid;color:cornflowerblue;">
+
+            }
+        }
+
+    }
+</div>

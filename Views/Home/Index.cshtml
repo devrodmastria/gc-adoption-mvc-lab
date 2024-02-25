@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Adoption Center";
+}
+
+<div class="text-center">
+    <h4>Adopt A Pet Today... Before They're Gone!</h4>
+    <br />
+    <form asp-action="Results" asp-controller="Results">
+        <select name="AnimalType" id="Type">
+            <option value="Choose">Choose</option>
+            <option value="Rabbit">Rabbit</option>
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Other">Other</option>
+        </select>
+        <input type="submit"/>
+    </form>
+
+    <br/>
+    <h5><span style="color:red">Disclaimer:</span> This website contains animals from the Human Society of Huron Valley in Ann Arbor.
+        <br />To see the latest animals, please visit <a href="https://www.hshv.org/" target="_blank">their website.</a>
+    </h5>
+
+</div>
